@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LeetCode Translator</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            padding: 15px;
+            width: 280px; /* Adjusted width for better fit */
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 20px;
+            color: #2c3e50;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        label {
+            font-size: 13px;
+            margin-bottom: 4px;
+            display: block;
+            color: #555;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 8px 10px;
+            font-size: 13px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+            transition: border-color 0.2s;
+        }
+
+        input[type="text"]:focus, select:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            color: #fff;
+            background-color: #3498db;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .message {
+            display: none;
+            margin-top: 10px;
+            padding: 8px;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .message.success {
+            background-color: #2ecc71;
+            color: #fff;
+        }
+
+        .message.error {
+            background-color: #e74c3c;
+            color: #fff;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 300px) {
+            body {
+                width: 250px;
+                padding: 10px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            button {
+                font-size: 13px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Translator</h2>
+    <div class="form-group">
+        <label for="apiKey">OpenAI API Key:</label>
+        <input type="text" id="apiKey" placeholder="Enter your API key">
+    </div>
+    <div class="form-group">
+        <label for="language">Select Language:</label>
+        <select id="language">
+            <option value="ko">한국어 (Korean)</option>
+            <option value="fr">Français (French)</option>
+            <option value="es">Español (Spanish)</option>
+            <option value="ru">Русский (Russian)</option>
+            <option value="zh">中文 (Chinese)</option>
+            <option value="ja">日本語 (Japanese)</option>
+        </select>
+    </div>
+    <button id="save">Save</button>
+    <div id="statusMessage" class="message"></div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
